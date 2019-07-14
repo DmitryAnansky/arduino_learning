@@ -6,14 +6,14 @@ void setup() {
 
 void loop() {
   int val;
-  int data;
+  int temperature;
 
   val = analogRead(potPin);
   temperature = (125*val)>>8;
 
   Serial.print("Temperature: ");
   Serial.print(temperature);
-  Serial.print("C");
+  Serial.println("C");
 
   delay(1000);
 }
