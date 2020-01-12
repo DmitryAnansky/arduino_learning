@@ -2,9 +2,9 @@ int servoPin = A0;
 int servoAngle;
 int pulseWidth;
 
-void servoPulse(int servoPin, int angle) {
+void servoPulse(int servoPin, int servoAngle) {
     //Converts the Angle to a pulse width value of 500 - 2480
-    pulseWidth = (11*angle) + 500;
+    pulseWidth = (11*servoAngle) + 500;
 
     digitalWrite(servoPin, HIGH);
     delayMicroseconds(pulseWidth);
@@ -18,5 +18,5 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  servoPulse(servoPin,80);
+  servoPulse(servoPin,180);
 }
