@@ -39,7 +39,7 @@ void loop()
   myservo3.attach(6);
   myservo4.attach(9);
 
-  x1 = analogRead(right_X);
+  x1 = analogRead(right_X);//default joustick x1 = 354; final right x1 = 0; finalleft x1 = 720;
   y1 = analogRead(right_Y);
   z1 = analogRead(right_key);
 
@@ -89,7 +89,7 @@ void rotateControl()
 {
     if(x1<50)  // if push the right joystick to the right
   {
-    pos1=pos1-1;  //pos1 subtracts 1
+    pos1=pos1-10;  //pos1 subtracts 10
     myservo1.write(pos1);  // servo 1 operates the motion, the arm turns right.
     delay(5);
     if(pos1<1)   // limit the angle when turn right
@@ -97,9 +97,9 @@ void rotateControl()
       pos1=1;
     }
   }
-  if(x1>1000)  // if push the right joystick to the let
+  if(x1>600)  // if push the right joystick to the let
   {
-    pos1=pos1+1;  //pos1 plus 1
+    pos1=pos1+10;  //pos1 plus 10
     myservo1.write(pos1);  // arm turns left 
     delay(5);
     if(pos1>180)  // limit the angle when turn left 
